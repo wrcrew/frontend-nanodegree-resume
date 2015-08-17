@@ -97,7 +97,7 @@ var education = {
 			"degree" : "B.S.",
 			"major" : ["Business"],
 			"dates" : "2001 - 2005",
-			"url" : "N/A"
+			"url" : "http://www.pacific.edu/"
 		}
 	],
 	"onlineCourses" : [
@@ -183,6 +183,23 @@ education.display = function() {
 		$(".education-entry:last").append(formattedSchoolLocation);
 		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major)
 		$(".education-entry:last").append(formattedSchoolMajor);
+
+	}
+	if (education.onlineCourses.length > 0) {
+		$("#education").append(HTMLonlineClasses);
+	}
+	for (course in education.onlineCourses) {
+		$("#education").append(HTMLschoolStart);
+		var formattedCourseName = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title)
+		formattedCourseName = formattedCourseName.replace("#",education.onlineCourses[course].url);
+		$(".education-entry:last").append(formattedCourseName);
+		console.log(formattedCourseName);
+		var formattedCourseSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school)
+		$(".education-entry:last").append(formattedCourseSchool);
+		var formattedCourseDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates)
+		$(".education-entry:last").append(formattedCourseDates);
+
+
 
 	}
 }
