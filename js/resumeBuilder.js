@@ -206,7 +206,7 @@ education.display = function() {
 
 education.display();
 
-$("#main").append(internationalizeButton);
+/* $("#main").append(internationalizeButton);
 
 function inName(fullname) {
 	var nameArray =[];
@@ -228,6 +228,7 @@ function inName(fullname) {
 
 
 console.log(inName("wilL cReW"));
+*/
 
 projects.display = function() {
 	for (foo in projects.projects) {

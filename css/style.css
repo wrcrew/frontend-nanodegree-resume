@@ -96,6 +96,11 @@ a {
   display: block;
 }
 
+.name {
+  color: blue;
+  font-size: 4em;
+}
+
 .welcome-message {
   font-style: italic;
   font-size: 18px;
@@ -109,7 +114,9 @@ a {
 }
 
 .orange {
-  background-color: gray;
+  background-color: white;
+  font-size: 2em;
+  color: blue;
 }
 
 .orange-text {
