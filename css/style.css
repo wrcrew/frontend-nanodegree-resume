@@ -95,8 +95,9 @@ a {
 }
 
 .name {
-  color: blue;
-  font-size: 4em;
+  color: #2E2EB8;
+  font: 700 6.5em Lato;
+  margin-bottom: 0;
 }
 
 .welcome-message {
@@ -111,6 +112,12 @@ a {
   display: none;
 }
 
+.role {
+  font-size: 2em;
+  color: gray;
+  margin-top: 0;
+  padding-top: 0;
+}
 .orange {
   background-color: white;
   font-size: 2em;
@@ -124,6 +131,11 @@ a {
 .white-text {
   font-weight: bold;
   color: black;
+}
+
+.skills-text {
+  font: 12px;
+  color: white;
 }
 
 .gray {
@@ -151,7 +163,7 @@ a {
 }
 
 .center-content {
-  padding: 2.5% 5%;
+  padding: 1% 1%;
 }
 
 ul {
@@ -160,8 +172,8 @@ ul {
 
 .biopic {
   float: left;
-  padding: 10px;
-  width: 125px;
+  padding: 15px;
+  width: 150px;
   display: none;
   border-radius: 50%;
 }
@@ -226,5 +238,11 @@ span {
   #skills-h3,
   .biopic {
     display: block;
+  }
+}
+
+@media(max-width: 480px) {
+  .name {
+    font-size: 4.5em;
   }
 }

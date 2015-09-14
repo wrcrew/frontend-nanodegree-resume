@@ -30,7 +30,7 @@ var bio = {
 	"name" : "Will Crew",
 	"role" : "Product Management",
 	"age" : 32,
-	"skills" : ["Product Management", "Business Development", "partner relations"],
+	"skills" : ["Product Management", "Business Development", "Partner Relations", "Product Marketing"],
 	"contacts" : {
 		"email" : "wrcrew@gmail.com",
 		"mobile" : "209-304-2616",
@@ -111,20 +111,14 @@ var education = {
 	]
 }
 
-header.display = function() {
+bio.display = function() {
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 $("#header").prepend(formattedName);
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 $("#header").prepend(formattedBioPic);
-}
-header.display();
 
-//<!-- Contacts Section -->
-
-topContacts.display = function() {
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#topContacts").append(formattedMobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 $("#topContacts").append(formattedEmail);
@@ -132,11 +126,17 @@ var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#topContacts").append(formattedLocation);
 var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 $("#topContacts").append(formattedGithub);
-}
-topContacts.display();
 
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+$("#footerContacts").append(formattedMobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$("#footerContacts").append(formattedEmail);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#footerContacts").append(formattedLocation);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+$("#footerContacts").append(formattedGithub);
 
-/* if (bio.skills.length > 0) {
+if (bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
 
 	for (skill in bio.skills) {
@@ -144,9 +144,12 @@ topContacts.display();
 		$("#skills").append(formattedSkill);
 	}
 }
-*/
 
-function displayWork() {
+}
+bio.display();
+
+
+work.display = function () {
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 
@@ -166,7 +169,7 @@ function displayWork() {
 	}
 }
 
-displayWork();
+work.display();
 
 education.display = function() {
 	for (school in education.schools) {
@@ -254,15 +257,3 @@ projects.display();
 
 $("#mapDiv").append(googleMap);
 
-//<!-- Footer Contacts Section -->
-footerContacts.display = function() {
-	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-	$("#footerContacts").append(formattedMobile);
-	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-	$("#footerContacts").append(formattedEmail);
-	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-	$("#footerContacts").append(formattedLocation);
-	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-	$("#footerContacts").append(formattedGithub);
-}
-footerContacts.display();
